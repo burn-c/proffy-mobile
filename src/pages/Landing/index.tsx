@@ -7,9 +7,17 @@ import landingImg from '../../assets/images/landing.png';
 import studyIcon from '../../assets/images/icons/study.png';
 import giveClassesIcon from '../../assets/images/icons/give-classes.png';
 import heartIcon from '../../assets/images/icons/heart.png';
+import { useNavigation } from '@react-navigation/native';
 
 const Landing: React.FC = () => {
-  return <Container>
+  const { navigate } = useNavigation();
+
+  function handleNavigateToGiveClassesPage() {
+    navigate('GiveClasses');
+  }
+  
+  return (
+    <Container>
     <Image source={landingImg} />
 
     <Title>
@@ -26,7 +34,7 @@ const Landing: React.FC = () => {
         <ButtonText>Estudar</ButtonText>
       </Button>
 
-      <Button >
+      <Button onPress={handleNavigateToGiveClassesPage}>
         <Image source={giveClassesIcon} />
 
         <ButtonText>Dar aulas</ButtonText>
@@ -38,6 +46,7 @@ const Landing: React.FC = () => {
       <Image source={heartIcon} />
     </TotalConnections>
   </Container>
+  )
 }
 
 export default Landing;
