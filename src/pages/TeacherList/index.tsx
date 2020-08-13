@@ -13,7 +13,8 @@ const TeacherList: React.FC = () => {
 
       <TeacherListScroll
         contentContainerStyle={{
-          
+          paddingHorizontal: 16,
+          paddingBottom: 16,
         }}
       >
       <TeacherItem />
